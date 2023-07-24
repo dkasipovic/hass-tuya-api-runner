@@ -1,5 +1,5 @@
 #!/usr/bin/with-contenv bashio
-set +u
+set -e
 
 export TUYA_CLIENT_ID=$(bashio::config 'tuya_client_id')
 export TUYA_CLIENT_SECRET=$(bashio::config 'tuya_client_secret')
@@ -12,5 +12,5 @@ bashio::log.info "Starting Tuya API Runner..."
 
 while read -r input; do
     echo "Got: ${input}"
-    result = $(node ./index.js "${input}")
+    node ./index.js "${input}"
 done
