@@ -8,7 +8,7 @@ RUN apk add --no-cache \
 
 COPY package.json /
 COPY index.js /
-RUN cd / && npm install --unsafe-perm
+RUN cd / && npm install --unsafe-perm 2>&1
 
 COPY run.sh /
 RUN chmod a+x /run.sh
