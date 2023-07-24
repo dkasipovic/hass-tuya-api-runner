@@ -10,6 +10,7 @@ bashio::log.info "Tuya API Path: ${TUYA_API_PATH}"
 
 bashio::log.info "Starting Tuya API Runner..."
 
-while read -r input; do
+while read -t 10 -r input; do
+    echo "Got: ${input}"
     result = $(node ./index.js "${input}")
 done
