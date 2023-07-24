@@ -52,16 +52,16 @@ async function CallAPI(url) {
     const method = 'POST';
     const reqHeaders = await getRequestSign(url, method, {}, query, {});
     console.log(`Calling ${config.host}${url}`)
-    const { data } = await axios.post(`${config.host}${url}`, query, {
+    const data = await axios.post(`${config.host}${url}`, query, {
         headers: reqHeaders
     }).catch((e) => {
         console.log('AXIOS ERROR', e);
     })
-    if (!data || !data.success) {
+    if (!data || !data.data || !data.data.success) {
         throw Error(`request api failed: ${data.msg}`);
     }
 
-    console.log(data);
+    console.log(data.data);
 }
 
 async function getRequestSign(path, method, headers, query, body) {
