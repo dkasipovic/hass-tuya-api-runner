@@ -54,7 +54,9 @@ async function CallAPI(url) {
     console.log(`Calling ${config.host}${url}`)
     const { data } = await axios.post(`${config.host}${url}`, query, {
         headers: reqHeaders
-    });
+    }).catch((e) => {
+        console.log('AXIOS ERROR', e);
+    })
     if (!data || !data.success) {
         throw Error(`request api failed: ${data.msg}`);
     }
