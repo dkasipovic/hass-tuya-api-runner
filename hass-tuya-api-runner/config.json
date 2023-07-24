@@ -1,0 +1,33 @@
+{
+    "slug": "hass-tuya-api-runner",
+    "name": "Tuya API runner",
+    "version": "1.0.0",
+    "url": "https://github.com/dkasipovic/hass-tuya-api-runner",
+    "stage": "stable",
+    "description": "Run Tuya API",
+    "arch": [
+        "armhf",
+        "armv7",
+        "aarch64",
+        "amd64",
+        "i386"
+    ],
+    "startup": "services",
+    "boot": "auto",
+    "ports": {},
+    "ports_description": {},
+    "map": [],
+    "options": {
+        "tuya_client_id": "Tuya Client ID",
+        "tuya_client_secret": "Tuya Client Secret",
+        "tuya_api_path": "https://openapi.tuyaeu.com"
+    },
+    "schema": {
+        "tuya_client_id": "str",
+        "tuya_client_secret": "str",
+        "tuya_api_path": "str"
+    },
+    "homeassistant_api": true,
+    "init": false,
+    "stdin": true
+}
