@@ -12,5 +12,5 @@ bashio::log.info "Starting Tuya API Runner..."
 
 while read -r input; do
     echo "Got: ${input}"
-    node ./index.js "${input}"
+    node ./index.js $input
 done
