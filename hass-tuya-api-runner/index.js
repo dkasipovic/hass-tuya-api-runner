@@ -51,8 +51,8 @@ async function CallAPI(url) {
     const query = {};
     const method = 'POST';
     const reqHeaders = await getRequestSign(url, method, {}, query, {});
-
-    const { data } = await axios.post(`${TUYA_API_PATH}${url}`, query, {
+    console.log(`Calling ${config.host}${url}`)
+    const { data } = await axios.post(`${config.host}${url}`, query, {
         headers: reqHeaders
     });
     if (!data || !data.success) {
