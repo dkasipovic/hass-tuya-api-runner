@@ -10,9 +10,6 @@ bashio::log.info "Tuya API Path: ${TUYA_API_PATH}"
 
 bashio::log.info "Starting Tuya API Runner..."
 
-#!/usr/bin/env bashio
-set -e
-
 while read -r input; do
     result = $(node ./index.js "${input}")
 done
