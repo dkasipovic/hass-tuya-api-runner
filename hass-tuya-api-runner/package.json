@@ -1,4 +1,14 @@
 {
+  "name": "hass-tuya-api-runner",
+  "version": "1.0.0",
+  "description": "Tuya API Runner",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "axios": "^1.4.0",
     "crypto": "^1.0.1",
