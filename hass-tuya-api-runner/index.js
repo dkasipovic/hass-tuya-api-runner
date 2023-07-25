@@ -89,8 +89,9 @@ async function getRequestSign(path, method, headers, query, body) {
 }
 
 if (process.argv && process.argv[2] && process.argv[2].length) {
+    let url = process.argv[2].replace(/^-+/, "");
     getToken(function () {
-        console.log('Calling', process.argv[2]);
-        CallAPI(process.argv[2]);
+        console.log('Calling', url);
+        CallAPI(url);
     });
 }
